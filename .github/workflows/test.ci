@@ -1,0 +1,16 @@
+name: Run CI
+on: [push, pull_request]
+
+jobs:
+  normal_ci:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.ref_name }}
+
+  pull_request_ci:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.ref_name }}
