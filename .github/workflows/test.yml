@@ -6,10 +6,10 @@ jobs:
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.ref_name }}
+      - run: echo "${{ github.ref_name }} ${{ github.ref_type }}"
 
   pull_request_ci:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.ref_name }}
+      - run: echo "${{ github.ref_name }} ${{ github.ref_type }}"
