@@ -1,4 +1,4 @@
-name: Run CI
+name: Testing
 on: [push, pull_request]
 
 jobs:
@@ -9,7 +9,6 @@ jobs:
       - run: echo ${{ github.ref_name }}
 
   pull_request_ci:
-    runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
